@@ -1,0 +1,32 @@
+{
+    "name": "functional-data-structures",
+    "version": "1.0.0",
+    "description": "Functional Data Structures",
+    "main": "index.js",
+    "directories": {
+        "test": "tests"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "elm": "^0.19.0-bugfix2",
+        "elm-test": "^0.19.0-beta12",
+        "parcel-bundler": "^1.10.3",
+        "parcel-plugin-compress": "^1.0.6",
+        "parcel-plugin-elm-hot": "^1.0.1"
+    },
+    "scripts": {
+        "test": "elm-test",
+        "dev": "parcel public/index.html",
+        "build": "parcel build public/index.html"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/danmarcab/functional-data-structures.git"
+    },
+    "author": "",
+    "license": "SEE LICENSE IN LICENSE",
+    "bugs": {
+        "url": "https://github.com/danmarcab/functional-data-structures/issues"
+    },
+    "homepage": "https://github.com/danmarcab/functional-data-structures#readme"
+}
