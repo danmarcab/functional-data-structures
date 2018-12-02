@@ -6,7 +6,7 @@ dev:
 	npm run dev
 
 build: install
-	rm dist/*
+	rm -f dist/*
 	npm run build
 
 test: install
