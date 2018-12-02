@@ -113,7 +113,7 @@ view model =
                         dsModel
 
                 NotFound ->
-                    NotFound.view
+                    NotFound.view { darkMode = model.darkMode }
     in
     { title = pageView.title ++ " - Functional Data Structures"
     , body =
@@ -138,20 +138,25 @@ view model =
 
 menuView : { title : String, size : Size, darkMode : Bool } -> Model -> Element Msg
 menuView { title, size, darkMode } model =
+    let
+        homePageLink =
+            Element.link [ Font.color (Color.contentFont darkMode) ]
+                { url = "/", label = Element.text "Functional Data Structures" }
+    in
     Element.row
         [ Element.width (Element.px size.width)
         , Element.height (Element.px size.height)
         , Background.color (Color.contentBackground model.darkMode)
         , Font.color (Color.contentFont darkMode)
-
-        --        , Element.explain Debug.todo
         , Element.paddingXY 20 10
         ]
-        [ Element.el
+        [ Element.row
             [ Element.width (Element.fillPortion 1)
             , Font.size 24
             ]
-            (Element.text ("Functional Data Structures - " ++ title))
+            [ homePageLink
+            , Element.text (" - " ++ title)
+            ]
         , Element.row
             [ Element.width (Element.fillPortion 1)
             , Element.spacing 10
@@ -165,8 +170,8 @@ menuView { title, size, darkMode } model =
                     else
                         Icon.moon
                 }
-            , Button.plain [ Element.alignRight ]
-                { onPress = ToggleDarkMode
+            , Element.link [ Element.alignRight ]
+                { url = "http://github.com/danmarcab/functional-data-structures"
                 , label = Icon.github
                 }
             ]

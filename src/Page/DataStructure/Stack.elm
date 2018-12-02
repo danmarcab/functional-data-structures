@@ -286,10 +286,10 @@ operationsView config model =
                     , text = model.operationText
                     }
                 , Element.row [ Element.width Element.fill ]
-                    [ Button.classic [ Element.alignLeft ] { onPress = config.toMsg AddOperation, label = Element.text "Help" }
-                    , case Parser.run operationParser model.operationText of
+                    [ --                    Button.classic [ Element.alignLeft ] { onPress = config.toMsg OpenHelp, label = Element.text "Help" }
+                      case Parser.run operationParser model.operationText of
                         Ok operation ->
-                            Button.classic [ Element.alignRight ] { onPress = config.toMsg OpenHelp, label = Element.text "Add" }
+                            Button.classic [ Element.alignRight ] { onPress = config.toMsg AddOperation, label = Element.text "Add" }
 
                         Err _ ->
                             Element.none
