@@ -9,7 +9,7 @@ structures, this may help you :)
 Right now, the initial version only supports Stack
 (the easy one I know), but I expect to add more soon.
 
-See it live at [functionaldatastructures.com](https://functionaldatastructures.com).
+See it live at https://functional-data-structures.netlify.app/
 
 
 ## Tech stuff
